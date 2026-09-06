@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 臨時變數，可隨時讀取改變(通常不這樣做)
+num1=50 * 30 + 30; // 將右邊結果存入變數num裡面
+
+function test(tip){
+    // 這個變數只在這個區塊裡面有效也可以改變，出了區塊就消失
+let num2=50 * 30 + 30; // 將右邊結果存入變數num裡面
+num2 = num2 + tip; //價格額外多了小費
+return num2;
+}
+let num3=2000; // 將右邊結果存入變數num裡面
+
+    // const 不可變，保護變數不被更改(常數)
+    const num4=50 * 10 + 30; // 將右邊結果存入變數num裡面
+    
+    // var num5=30 * 30 + 30; // var 是可變變數，痊域變數很危險，現在不用了
+
+</script>
+</body>
+</html>
