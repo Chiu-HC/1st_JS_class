@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運算子</title>
+</head>
+<body>
+    <h1>運算子</h1>
+    <script>
+        let a = 10;
+        let b = 3
+
+        console.log(a + b); // 13
+        console.log(a - b); // 7
+        console.log(a * b); // 30
+        console.log(a / b); // 3.3333333333333335
+        console.log(a % b); // 1
+        console.log(a **b); // 30
+
+        let c = 5;
+        c = a + b; // c= 13
+        c = c + 1; // c= 13 + 1
+        c = c + 1; // c= 14 + 1
+        c = c + 1; // c= 15 + 1
+        c = c + 1; // c= 16 + 1
+
+        c++; // c= c + 1 這行結束後才會加1
+        // ++C; // C= C + 1 這行開始前就會加1，少見
+        c--; // c= c - 1 這行結束後才會減1
+        
+        console.clear();
+        // 複合運算子
+        a = a + 2;
+        a += 2; // a = a + 2
+        a -= 10; // a = a - 10
+        a *= 10; // a = a * 10
+        a /= 10; // a = a / 10
+
+        let name = "John";
+        name = name + " Doe";
+        // 比較運算子
+        console.clear();
+        
+        console.log(a, b); // false 
+      
+        console.log(a == b); // false
+        console.log(a != b); // true
+
+        strA = "10";
+        numA = 10;
+        console.log(strA, numA); // true
+        console.log(strA == numA); // true
+        console.log(strA === numA); // false
+        console.log('---------------------------------'); // false
+        console.log(strA != numA); // false
+        console.log(strA !== numA); // true
+
+        console.clear();
+
+        let numC = 10;
+        let numD = numC;
+
+        // numC = 20;
+        console.log(numC, numD); // false
+        
+        console.log(numC > numD); // false
+        console.log(numC < numD); // false
+        console.log(numC >= numD); // true
+        console.log(numC <= numD); // true
+        
+        console.clear();
+        let isAdult = true;
+        let hasLicense = false;
+        let hasCar = true;
+        
+        /* And 運算子 當 && 兩邊都為 true 時，回答 true
+        答的程式動作如下
+
+        A = T && ?? 
+
+        其實是把右邊的值回傳給你
+        T = T && T
+        F = T && F
+
+        其實是把左邊的值回傳給你
+        F = F && T
+        F = F && F
+
+        T = T && F && ??
+
+        T = T && T && T
+        F = T && T && F
+        */
+       
+        const answer = true && false && fac(); // true && true && true
+        console.log(answer); // undefined
+
+        function fac() {
+            console.log("會開車");
+            return 'KOcar';
+        }
+
+        /* Or 運算子 當 || 兩邊某一邊為 true 時，回答 true
+        
+        or 左邊只要不是 false 就提早返回，因為已經是 true 了
+        T = T || ??
+        T = T || T
+        or 左邊是 false 改成右邊返回(或繼續往下判斷)
+        F = F || T
+        F = F || F
+
+        */
+        console.clear();
+        const theOR = false || false || NaN || 'KG'; // true || true
+        console.log(theOR); // true
+
+        //NOT 運算子，將當前的值(可以是布林或任何東西)反轉為布林
+        console.clear();
+        // const theNOT = !true; // false
+        const checkVar = 0;
+        const theNOT = !!checkVar; // 數字可以當有東西(true)遇到會反轉成 false
+        console.log(theNOT); // false
+
+        // 複合條件 優先權順序>小括號先處理
+        console.log = (false && false || true);
+        console.log = (true && false || true);
+        console.log = ((true && false) || true);
+        
+    </script>
+</body>
+</html>
