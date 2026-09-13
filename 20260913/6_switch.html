@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+
+<body>
+    <h1>Switch 根據 value 進行不同路線 [邏輯條件]</h1>
+    <script>
+        const day = 2;
+        switch (day) {
+            case 1:
+                console.log('星期一')
+                break; //為了確保讀到這段落，直接破壞語法區間，不再讀取其他列指令作用
+            case 2:
+                console.log('星期二')
+                break;
+            case 3:
+                console.log('星期三')
+                break;
+            default:
+                console.log('其他')
+                break;
+        }
+
+        console.log('結束') // switch case 會一直往下找
+
+        console.clear();
+
+        // switch case 可以刪減寫法   
+        // UR > SAR > AR > SR > RR > R > U > C
+        const cardLevel = 'UR';
+
+        switch (cardLevel) {
+            case 'C':
+            case 'U':
+            case 'R':
+                console.log('丟掉')
+                break;
+            case 'RR':
+            case 'AR':
+            case 'SR':
+                console.log('保留')
+                break;
+
+            default:
+                console.log('大發')
+                break;
+        }
+
+        console.clear();
+
+
+
+    </script>
+</body>
+
+</html>

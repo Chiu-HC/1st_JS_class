@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>條件判斷</title>
+</head>
+<body>
+    <h1>條件判斷</h1>
+    <script>
+        let age = 20;
+
+        if (age > 18){
+            let a = 123;
+            console.log('成年')
+            console.log('可以喝酒')
+            console.log('可以開車')
+            console.log('可以獨自生活')
+        }
+
+        const weather = 'Sunny';
+        /* if (weather === 'Sunny'){
+             console.log('可出門');
+         } else{
+             console.log('待在家')
+        } 
+        */
+        if (weather === 'Sunny') console.log('可出門');
+        else console.log('待在家')
+        // 若只有一行時，可不用加大括號
+
+        console.log('結束');
+        
+        // 多重條件 if else if (等價 nesting)
+        // ------------------------
+        console.clear();
+        
+        const qMonth = 7; // Q1(0-2), Q2(3-5), Q3(6-8), Q4(9-11)
+        
+        // - V3 再改成另一形式的單行寫法 -
+        // 限定合法我想要的資料才可進來正常執行
+        if (typeof (qMonth) === 'number' && 0 <= qMonth && qMonth < 12){
+            if (qMonth < 3) console.log('Q1 賽季');
+            else if (qMonth < 6) console.log('Q2 賽季');
+            else if (qMonth < 9) console.log('Q3 賽季');
+            else console.log('Q4 賽季');
+        }else console.log('qMonth 數據無效');
+
+        // -- if else 正常寫法要加 {} 來區別 --
+
+        // if (qMonth < 3){
+        //     console.log('Q1 賽季');
+        // } else {
+        //     if (qMonth < 6){
+        //     console.log('Q2 賽季');
+        //     } else {
+        //     if (qMonth < 9){
+        //         console.log('Q3 賽季');
+        //         } else {
+        //         console.log('Q4 賽季');
+        //         } 
+        //     }
+        // }
+        
+        // ------- 簡化，else if 可以合併，因為 else 後面的else { if } 算單筆
+        
+        // if (qMonth < 3){
+        //     console.log('Q1 賽季');
+        //     console.log('Q1 賽季');
+        // } else if (qMonth < 6){
+        //     console.log('Q2 賽季');
+        //     console.log('Q2 賽季');
+        // } else if (qMonth < 9){
+        //     console.log('Q3 賽季');
+        //     console.log('Q3 賽季');
+        // } else {
+        //     console.log('Q4 賽季');
+        //     console.log('Q4 賽季');
+        // } 
+
+
+    </script>
+</body>
+</html>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>運算子</title>
 </head>
+
 <body>
     <h1>運算子</h1>
     <script>
@@ -16,7 +18,7 @@
         console.log(a * b); // 30
         console.log(a / b); // 3.3333333333333335
         console.log(a % b); // 1
-        console.log(a **b); // 30
+        console.log(a ** b); // 30
 
         let c = 5;
         c = a + b; // c= 13
@@ -28,7 +30,7 @@
         c++; // c= c + 1 這行結束後才會加1
         // ++C; // C= C + 1 這行開始前就會加1，少見
         c--; // c= c - 1 這行結束後才會減1
-        
+
         console.clear();
         // 複合運算子
         a = a + 2;
@@ -41,9 +43,9 @@
         name = name + " Doe";
         // 比較運算子
         console.clear();
-        
+
         console.log(a, b); // false 
-      
+
         console.log(a == b); // false
         console.log(a != b); // true
 
@@ -63,17 +65,17 @@
 
         // numC = 20;
         console.log(numC, numD); // false
-        
+
         console.log(numC > numD); // false
         console.log(numC < numD); // false
         console.log(numC >= numD); // true
         console.log(numC <= numD); // true
-        
+
         console.clear();
         let isAdult = true;
         let hasLicense = false;
         let hasCar = true;
-        
+
         /* And 運算子 當 && 兩邊都為 true 時，回答 true
         答的程式動作如下
 
@@ -92,7 +94,7 @@
         T = T && T && T
         F = T && T && F
         */
-       
+
         const answer = true && false && fac(); // true && true && true
         console.log(answer); // undefined
 
@@ -123,10 +125,21 @@
         console.log(theNOT); // false
 
         // 複合條件 優先權順序>小括號先處理
-        console.log = (false && false || true);
-        console.log = (true && false || true);
-        console.log = ((true && false) || true);
-        
+        // console.log = (false && false || true);
+        // console.log = (true && false || true);
+        // console.log = ((true && false) || true);
+
+        console.clear();
+        // 三元運算子
+        const age = 25;
+        const message = true ? '成年' : '未成年';
+        console.log(message);
+
+        const grade = 90;
+        let level = grade >= 90 ? '甲' : grade >= 70 ? '乙' : '丙';
+        console.log(grade);
+
     </script>
 </body>
+
 </html>
