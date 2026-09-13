@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>基本資料型別 data model (type script)</h1>
+
+    <script>
+    // 數字型別 number
+        const age = 25; 
+        const pi = 3.14; 
+        const bb = -0.5;
+
+        //console.log(age);
+        // console.log(pi);
+        // console.log(bb);
+        // console.log(age, pi , bb);
+
+        const word = 'Hello';
+        console.log('hello world');
+        console.log( word + ' world'); // NaN 
+        console.log(`${word} world!!`); // Hello world');
+
+        console.log(age, '的型別為', typeof age); // number
+        console.log('age 的 Vaule = 25, 其 type 為 number');
+        console.log(`pi的 Vaule = ${pi}, 其 type 為 ${typeof pi}`); // number
+
+        const infinty = Infinity;
+        console.log(typeof infinty, infinty); // number
+
+        //const notANumber = 0/0;
+        //const notANumber = 'Hi' - 200;
+        //console.log(typeof notANumber, notANumber); // number
+
+        console.clear(); // 清除log訊息
+
+        const name = 'Alice';
+        // console.log(name, typeof name); // string
+        const adWord = `Hello, ${name}!`;
+        console.log(`
+            ${adWord}, 
+            welcome to One`); // string
+
+        //const msg = 'Boss: "最後離開者請關門",颱風到';
+        //const msg = 'Boss say: "最後離開者請關門"';
+        //const msg = 'Boss\'s say:\n "最後離開者請關窗"';
+        const msg = `Boss\'s say:
+        "最後離開者請關燈"`;
+        console.log(msg);
+
+
+
+    </script>
+</body>
+</html>
