@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz and Anwser</title>
+</head>
+
+<body>
+    <script>
+        // for (let i = 1; i < 101; i += 2)  console.log(i);
+
+        // let sum = 0;
+        // let i = 1;
+        // while (i <= 100) {
+        //     sum += i;
+        //     i++;
+        // }
+        // console.log(sum);
+
+        // 預計先用小迴圈處理★跑5次
+        // 再用一個大迴圈控制小迴圈跑5次，每次後面要換行
+
+        let star = '';
+        for (let j = 0; j < 5; j++) {
+            for (let i = 0; i < 5; i++) star += '★';
+            star += '\n';
+        }
+        console.log(star);
+
+        //做法2 >> 看教材
+        let star2 = '';
+        for (let i = 0; i < 5; i++) {
+            star2 += '★';
+            if ((i + 1) % 5 === 0) star2 += '\n';
+        }
+        console.log(star2);
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
