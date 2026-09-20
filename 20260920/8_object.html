@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <h1></h1>
+    <script>
+        const emptyObj = {};
+        const userInfo = {
+            name: 'Aby',
+            job: {
+                title: 'enginer',
+                company: 'Amazone'
+            },
+            // phone: {
+            //     home: '0912-345-678'
+            //     office: '02-1234-56678'
+            // },
+            age: 20,
+            address: 'Taipei',
+            birthday: '2000/11/10',
+            height: 170
+        }
+        console.log(userInfo?.phone?.home);
+        console.log(userInfo.name, userInfo['name']);
+        userInfo.name = 'Koki'
+
+        console.clear();
+        for (const key in userInfo) {
+            // console.log(key, userInfo[key]);
+            if (userInfo[key] instanceof Object) {
+                console.log(`----------------`);
+                for (const subkey in userInfo[key]) {
+                    console.log(`key=${key}.${subkey}, value=${userInfo[key][subkey]}`);
+                }
+                console.log(`----------------`);
+            } else {
+                console.log(`key=${key}, value=${userInfo[key]}`);
+            }
+        }
+
+        // let student = {
+        //     en: 100,
+        //     mt: 95,
+        //     ch: 98
+        // }
+        // console.log(`${key}考${value}分`);
+
+
+
+    </script>
+</body>
+
+</html>

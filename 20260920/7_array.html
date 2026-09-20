@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let animals = ['cat', 'dog', 'mouse'];
+        const animals = ['cat', 'dog', 'mouse'];
+
+        // animals[3] = 'fish';
+        // animals[animals.length] = 'fish';
+        // animals[animals.length] = 'rabbit';
+        // animals[animals.length] = 'fish';
+
+        // 變數/常數，會對映在記憶體中位置存取
+        // 陣列則是記憶體編碼位置的索引表(屬於物件的一種) 
+
+        // 陣列存取方式，可透過 .push() .pop() .shift() .unshift()
+        // 且會改變陣列本身
+        // 陣列實例化 = prototype
+        const getLast = animals.pop();
+        const getFirst = animals.shift();
+        animals.unshift('fish')
+        animals.push('fish')
+        animals.push('rabbit')
+
+        console.log(getFirst, getLast, animals)
+        // .include() 檢查指定內容是否在陣列中 true/false
+        // .indexOf() 調查指定內容在索引幾號
+        // .lastIndexOf() 同上，從尾巴開始找
+        // .reverse() 將當前陣列反轉
+        // .sort() 將當前陣列排序
+        // .joni() 將當前陣列轉成字串，並且可指定分隔符號
+
+        console.log(`<li>${animals, join}</li>`)
+
+
+    </script>
+</body>
+
+</html>

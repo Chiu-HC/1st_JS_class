@@ -28,13 +28,26 @@
         console.log(fruits.length);
 
         console.clear();
+
         const students = ['A', 'B', 'C', 'D', 'E'];
-        // for (let i = 0; i < 5; i++);
+        // for (let i = 0; i < 4; i++);
+        // console.log(students[6]);
 
         for (let i = 0; i < students.length; i++) {
             console.log(students[i]);
         }
 
+        console.clear();
+        // 常用，比For迴圈較整潔
+        for (let item of students) {
+            console.log(item);
+        }
+
+        console.clear();
+        // 較常用，直接使用 array method來實現
+        students.forEach(function (item) {
+            console.log(item);
+        })
 
 
     </script>
