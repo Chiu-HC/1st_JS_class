@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>會用到回調函式的prototype</h1>
+    <script>
+        const arr = ['A', 'B', 'C', 'D', 'E'];
+        arr.forEach((value, index, array) => console.log(value, index, array));
+        console.clear();
+
+        // 批次將值映射轉換，最後返回一個新array，原本的陣列不會被改變
+        const newArr = arr.map(val => val + val);
+        console.log(newArr, arr);
+        console.table(newArr);
+        console.table(arr);
+        console.clear();
+
+        // 批次過濾，最後返回一個新array
+        const people = [
+            { name: 'Alice', age: 18 },
+            { name: 'Bob', age: 20 },
+            { name: 'John', age: 15 },
+            { name: 'Marry', age: 25 },
+        ];
+        // const canSmoker = people.filter((person) => {
+        //     console.log(person);
+        //     return person.age >= 20;
+        // });
+
+        // 利用物件解構賦值，直接取出物件裡的屬性值
+        // const canSmoker = people.filter(person => person.age >= 20);
+        const canSmoker = people.filter(({ age }) => age >= 20);
+        console.log(canSmoker);
+        console.clear();
+
+        // 尋找第一個符合條件的元素
+        const findAAdult = people.find(({ age }) => age > 19);
+        console.log(findAAdult);
+        console.clear();
+
+        // 組合技，利用陣列特性一次完成多個動作
+        const whoCanSmoke = people
+            .filter(({ age }) => age > 19)
+            .map(({ name }) => name)
+            .join(', ');
+        console.log(`${whoCanSmoke} can smoke.`);
+        console.clear();
+
+        /** 
+         * reduce(fnm init) 累加，通常特殊的需求會用到，偏向進階技巧
+         * callbackFn(accumulator, currentValue, currentIndex, array)
+         * fn 通常會寫(前一次拿到的return值，從陣列取出的元素)=>處理方式，初始值 
+         * 決定何時return，何時停止
+         */
+
+        const sum = [1, 2, 3, 4, 5].reduce((acc, cur) => acc + cur, 0);
+        console.log(sum);
+        console.clear();
+
+        // people.reduce((acc, cur) => {
+        //     if (cur.age > 19) acc.push(cur.name);
+        //     return acc;
+        // }, []).join(', ');
+
+        const aaa = people.reduce((acc, cur) => {
+            if (cur.age >= 18) acc.push(cur.name);
+            return acc;
+        }, []).join(', ');
+
+        const bbb = people.reduce((acc, cur) => (cur.age >= 20) ? `${acc}, ${cur.name}` : acc, '');
+
+        console.log(aaa, bbb);
+
+
+    </script>
+</body>
+
+</html>

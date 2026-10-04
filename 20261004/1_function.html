@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>匿名函式</title>
+</head>
+
+<body>
+    <script>
+        // 一般函式宣告方式(JS會把函式提升到最上面，這個函式可以在宣告前呼叫)
+        function hello1(name) {
+            return `Hello, ${name}!`;
+        }
+
+        //匿名的函式宣告方式，hello2是一個變數，值為一個匿名函式(變數執行一樣有順序問題)
+        const hello2 = function (name) {
+            return `Hello, ${name}!`;
+        };
+
+        console.log(hello2('Alice')); // 呼叫匿名函式
+
+        // 面試觀念 IIFE (Immediately Invoked Function Expression) 立即執行函式
+        (function (name) {
+            console.log(`Hello, ${name}!`);
+        })('Bob'); // 宣告匿名函式後立刻執行
+
+
+        // 右邊值指定給左邊變數，JS會覺得少寫名稱，包起來就是匿名函式(表示不重要一次性使用)
+        const hello3 = (function (name) {
+            return `Hello, ${name}!`;
+        });
+
+        console.log(hello3('John')); // 呼叫匿名函式
+
+        console.clear();
+
+
+        function showValue(atr) {
+            console.log(`Value: ${atr}`);
+        }
+
+        const ary = [1, 2, 3, 4, 5];
+        // 陣列有一個方法 forEach，裡面可以放匿名函式，這函式會被陣列裡的每一個元素呼叫一次
+        ary.forEach(showValue);
+
+        console.clear();
+        // 建議這樣寫比較快，通常是一次性使用，匿名函式不需要命名
+        ary.forEach(function (value) {
+            console.log(`Value: ${value}`);
+        });
+
+        // 匿名函數用完就丟，瀏覽器執行完就會把它釋放掉，不讓程式碼裡充滿一堆雜亂函數。
+        // 沒有幫這個動作取名字，只是把「一個動作」包起來後直接送執行。
+
+
+    </script>
+</body>
+
+</html>

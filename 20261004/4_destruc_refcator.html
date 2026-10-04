@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解構與重構</title>
+</head>
+
+<body>
+    <script>
+        // 展開運算子(Spread Operator) ES6新語法，將陣列或物件展開，後者會覆蓋前者
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, ...arr1, 6];
+        arr1.push(5);
+        console.log(arr1, arr2);
+
+        // const obj1 = { name: 'Alice', age: 18, age: 20 };
+
+        const initObj = {
+            name: 'Guest',
+            age: 20,
+            gender: 'female',
+            bithday: '2000-01-01',
+        };
+
+        const newObj = {
+            ...initObj,
+            name: 'Balana',
+        };
+        console.clear();
+
+        // 解構賦值(Destructuring Assignment) ES6新語法，將陣列或物件解構
+        const arr3 = [30, 40, 50, 60, 70, 80];
+        const a = arr3[0];
+        const b = arr3[1];
+        const c = arr3[2];
+        console.log(a, b, c);
+
+        // const [aa, bb, cc] = arr3;
+        // console.log(aa, bb, cc);
+        // const [aa, , bb] = arr3;
+        // console.log(aa, bb);
+        const [aa, bb, ...rest] = arr3;
+        // rest 會把剩下的元素撿起來放進新的陣列裡，框架常用
+        console.log(aa, bb, rest);
+        console.clear();
+
+        let person = { userName: "小明", userAge: 18, city: "台北", job: "學生" };
+        // const { userName, ...other } = person;
+        // console.log(userName, other);
+
+        // 將原先的 userName 改成 account，其他屬性放進 other 物件裡
+        const { userName: account, birth = '1999', ...other } = person;
+        console.log(account, birth, other);
+
+        // 巢狀解構
+        let user = {
+            info: { id: 1, username: "loki" },
+            scores: [90, 80, 70]
+        };
+        let {
+            info: { username },
+            scores: [first, second]
+        } = user;
+        console.log(username); // loki
+        console.log(first, second); // 90 80
+
+        // Set 物件不是陣列，整理元素裡面不重複的陣列集合，用來過濾陣列重複元素
+        const set = new Set([1, 2, 3, 4, 5, 4, 3, 2, 0]);
+        console.log(set);
+
+        // map式物件，key-value 形式的集合，常用來做資料庫
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

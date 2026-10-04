@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+
+<body>
+    <script>
+        // ES6 箭頭函式 (Arrow Functions)
+        // 1. 參數只有一個時，括號可以省略
+        // 2. 函數需要作用域{}，就不能省略
+
+        const max = function (num) {
+            console.log(num);
+        };
+        // max(100);
+
+        // const alice = (num) => {
+        //     console.log(num);
+        // };
+        // alice(200);
+
+        // const alice = (num) => {
+        //     return num * num;
+        // };
+
+        const alice = num => num * num; //預設帶入 return，只有一行程式碼可以省略
+
+        console.log(alice(5));
+
+        // this 指向，箭頭函式沒有自己的 this，會使用外層的 this(有點難懂，先知道就好)
+        // 大部分物件是以資料庫為主
+        // 閉包保護內變數，外部無法存取類似私有變數(包成物件導向)
+
+        console.clear();
+
+        console.log((num => num * num)(10)); //立即執行函式，傳入 10，回傳 100 
+
+        // funtion 裡面的變數屬於區域變數只能在函數內存取
+
+
+
+    </script>
+</body>
+
+</html>
