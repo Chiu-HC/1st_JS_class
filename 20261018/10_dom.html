@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>hello 1 world</h1>
+    <h2>hello 2 world</h2>
+    <h3>hello 3 world</h3>
+    <hr>
+    <div class="d1">
+        <ul class="u1 red">
+            <li class="l1 red">
+                <div>Hello 1</div>
+                <ul class="u2 red">
+                    <li class="i2 red">Hi A</li>
+                    <li>Hi B</li>
+                </ul>
+            </li>
+            <li>Hello 2</li>
+            <li>Hello 3</li>
+        </ul>
+    </div>
+
+    <script>
+        const h1 = document.querySelector('h1');
+        const card = document.createElement('div');
+        Object.assign(card.style, {
+            width: '150px',
+            height: '100px',
+            backgroundColor: 'lightgreen',
+            color: 'white'
+        });
+        // card.textContent = '這是一個卡片';
+        const text = document.createElement('div')
+        card.append(text, link, btn);
+
+        document.body.append(card);
+
+        //--------遍歷與定位-------
+        // btn.parentElement;
+        // btn.colsest('div');
+        const pei = document.querySelector('.i2');
+        pei.parentElement;
+        pei.closest('.red');
+        pei.closest('div');
+
+        const parent = document.querySelector('.u1');
+
+
+
+    </script>
+</body>
+
+</html>

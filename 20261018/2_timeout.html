@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // setTimeout - 延遲執行
+const timeoutId=setTimeout(function() {
+    console.log("3 秒後執行");
+    // alert("3 秒後執行");
+}, 3000);
+
+// clearTimeout - 取消延遲執行
+clearTimeout(timeoutId); // <---清除用
+
+// setInterval - 重複執行
+let conut=1;
+const intervalId=setInterval(()=>{
+    console.log(`hey~~${conut}`);
+    conut++;
+    
+    (conut === 6) && clearInterval(intervalId);
+},1000);
+
+clearTimeout(timeoutId); // <---清除用
+
+let count2=0;
+clearTimeout(timeoutId); 
+function doOnce(){
+    console.log('只執行一次');
+    count2++;
+    if (count2 < 5)setTimeout(doOnce,1000);
+}
+doOnce();
+
+
+// let counter = 0;
+// let intervalId = setInterval(function() {
+//     counter++;
+//     console.log("計數：" + counter);
+    
+//     if (counter >= 5) {
+//         clearInterval(intervalId); // 停止計時器
+//         console.log("計時器已停止");
+//     }
+// }, 1000);
+
+    </script>
+</body>
+</html>

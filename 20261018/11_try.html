@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin: 0 auto;
+
+            button {
+                padding: 8px 16px;
+                border: 1px solid #ccc;
+                background: #f5f5f5;
+            }
+
+            input {
+                width: 40px;
+                height: 40px;
+                border: none;
+                background: none;
+                cursor: pointer;
+            }
+        }
+
+        #preview-block {
+            background-color: red;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+
+            &.square {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+
+            &.circle {
+                clip-path: circle(50% at 50% 50%);
+            }
+
+            &.triangle {
+                clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            }
+
+            &.star {
+                clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form class="form-container">
+        <button type="button" value="square">正方形</button>
+        <button type="button" value="circle">圓形</button>
+        <button type="button" value="triangle">三角形</button>
+        <button type="button" value="star">星星</button>
+        <input type="color" value="#ff0000" />
+    </form>
+    <hr />
+    <div id="preview-block" class="square"></div>
+
+    <script>
+        // todo...
+        // 讓 input的值可以改變 preview-
+        const qoo = document.getElementById("preview-block");
+        let adJust = qoo.style.backgroundColor;
+
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                trans(button.value);
+            });
+        });
+
+        const colorInput = document.querySelector("input");
+        colorInput.addEventListener("change", (e) => {
+            color(e.target.value);
+        });
+
+        function trans(re) {
+            switch (re) {
+                case "square":
+                    qoo.classList.add("square");
+                    qoo.classList.remove("circle");
+                    qoo.classList.remove("triangle");
+                    qoo.classList.remove("star");
+                    break;
+                case "circle":
+                    qoo.classList.add("circle");
+                    qoo.classList.remove("square");
+                    qoo.classList.remove("triangle");
+                    qoo.classList.remove("star");
+                    break;
+                // case "triangle":
+                //     zone.classList.add("triangle");
+                //     zone.classList.remove("square");
+                //     zone.classList.remove("circle");
+                //     zone.classList.remove("star");
+                //     break;
+                // case "star":
+                //     zone.classList.add("star");
+                //     zone.classList.remove("square");
+                //     zone.classList.remove("circle");
+                //     zone.classList.remove("triangle");
+                //     break;
+            }
+        }
+
+        function color(re) {
+            adJust = re;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
