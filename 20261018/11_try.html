@@ -68,9 +68,9 @@
 
     <script>
         // todo...
-        // 讓 input的值可以改變 preview-
-        const qoo = document.getElementById("preview-block");
-        let adJust = qoo.style.backgroundColor;
+        // 讓 input的值可以改變 preview-block 的背景顏色
+        const changColor = document.getElementById("preview-block");
+        let clr = qoo.style.backgroundColor;
 
         const buttons = document.querySelectorAll("button");
         buttons.forEach(button => {
@@ -81,40 +81,40 @@
 
         const colorInput = document.querySelector("input");
         colorInput.addEventListener("change", (e) => {
-            color(e.target.value);
+            changColor.style.backgroundColor = e.target.value;
         });
 
         function trans(re) {
             switch (re) {
                 case "square":
-                    qoo.classList.add("square");
-                    qoo.classList.remove("circle");
-                    qoo.classList.remove("triangle");
-                    qoo.classList.remove("star");
+                    changColor.classList.add("square");
+                    changColor.classList.remove("circle");
+                    changColor.classList.remove("triangle");
+                    changColor.classList.remove("star");
                     break;
                 case "circle":
-                    qoo.classList.add("circle");
-                    qoo.classList.remove("square");
-                    qoo.classList.remove("triangle");
-                    qoo.classList.remove("star");
+                    changColor.classList.add("circle");
+                    changColor.classList.remove("square");
+                    changColor.classList.remove("triangle");
+                    changColor.classList.remove("star");
                     break;
-                // case "triangle":
-                //     zone.classList.add("triangle");
-                //     zone.classList.remove("square");
-                //     zone.classList.remove("circle");
-                //     zone.classList.remove("star");
-                //     break;
-                // case "star":
-                //     zone.classList.add("star");
-                //     zone.classList.remove("square");
-                //     zone.classList.remove("circle");
-                //     zone.classList.remove("triangle");
-                //     break;
+                case "triangle":
+                    changColor.classList.add("triangle");
+                    changColor.classList.remove("square");
+                    changColor.classList.remove("circle");
+                    changColor.classList.remove("star");
+                    break;
+                case "star":
+                    changColor.classList.add("star");
+                    changColor.classList.remove("square");
+                    changColor.classList.remove("circle");
+                    changColor.classList.remove("triangle");
+                    break;
             }
         }
 
         function color(re) {
-            adJust = re;
+            clr = re;
         }
 
 
