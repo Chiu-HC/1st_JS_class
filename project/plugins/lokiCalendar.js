@@ -261,8 +261,9 @@ const calendarService = () => {
         choose: (node) => {
             if (node === chooseDays[0] && !chooseDays[1]) return;
             chooseList(node);
-        }
-    }
+        },
+        refresh: tablePrint,
+    };
 };
 
 
